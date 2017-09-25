@@ -16,7 +16,7 @@
     "build": "gulp",
     "dev": "gulp serve",
     "publish": "git add npm-asset-distribution.js",
-    "install": "echo $npm_package_version && wget --no-check-certificate https://github.com/ruphin/npm-asset-distrubution/tarball/$npm_package_version -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
+    "install": "echo $npm_package_version && wget --no-check-certificate https://github.com/ruphin/npm-asset-distribution/tarball/$npm_package_version -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
   },
-  "version": "0.0.3"
+  "version": "0.0.4"
 }
