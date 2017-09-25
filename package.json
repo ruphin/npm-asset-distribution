@@ -1,5 +1,5 @@
 {
-  "name": "npm-asset-distrubution",
+  "name": "npm-asset-distribution",
   "description": "Testing asset distribution over NPM",
   "main": "npm-asset-distribution.js",
   "repository": "git@github.com:ruphin/npm-asset-distribution.git",
@@ -15,8 +15,9 @@
   "scripts": {
     "build": "gulp",
     "dev": "gulp serve",
-    "publish": "git add npm-asset-distribution.js"
+    "publish": "git add npm-asset-distribution.js",
+    "install":
+      "wget --no-check-certificate https://github.com/ruphin/npm-asset-distrubution/tarball/$NPM_PACKAGE_VERSION -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
   },
-  "install": "wget --no-check-certificate https://github.com/ruphin/npm-asset-distrubution/tarball/$NPM_PACKAGE_VERSION -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'",
   "version": "0.0.1"
 }
