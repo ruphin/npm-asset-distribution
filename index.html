@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+
+<script type="module" src="src/npm-asset-distribution.js"></script>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #223;
+  }
+
+  * {
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    -ms-user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+  #img {
+    margin: 100px;
+    height: 300px;
+    width: 400px;
+    background-size: cover;
+  }
+</style>
+
+<!-- build:remove -->
+<span id="browser-sync-binding"></span>
+<!-- endbuild -->
+
+<div id="img"></div>
+<script>
+  // Configure the asset path
+  window.modulesAssetPath = function (module) {
+    if (module === 'npm-asset-distribution') {
+      return '';
+    } else {
+      return `node_modules/${module}`;
+    }
+  }
+
+</script>
+<script type="module">
+  import { imageLocation } from '/node_modules/npm-asset-distribution/npm-asset-distribution.js'; document.getElementById('img').style.backgroundImage
+  = `url('${imageLocation}')`; console.log(imageLocation); console.log(document.getElementById('img').style);
+</script>
