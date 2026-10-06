@@ -1,22 +1,21 @@
 {
   "name": "npm-asset-distribution",
   "description": "Testing asset distribution over NPM",
+  "type": "module",
   "main": "npm-asset-distribution.js",
   "repository": "git@github.com:ruphin/npm-asset-distribution.git",
   "author": "Goffert van Gool",
   "license": "MIT",
   "devDependencies": {
-    "babel-core": "^6.26.0",
-    "babel-preset-minify": "^0.2.0",
-    "browser-sync": "^2.18.8",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^7.0.0"
+    "vite": "^8.3.3"
   },
   "scripts": {
-    "build": "gulp",
-    "dev": "gulp serve",
+    "build": "vite build",
+    "dev": "vite",
+    "prepublishOnly": "npm run build",
+    "release": "npm publish",
     "publish": "git add npm-asset-distribution.js",
-    "install": "[ ! -d 'assets' ] && wget --no-check-certificate https://github.com/ruphin/npm-asset-distribution/tarball/v$npm_package_version -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
+    "install": "[ -d 'assets' ] || wget --no-check-certificate https://github.com/ruphin/npm-asset-distribution/tarball/v$npm_package_version -O - | tar xz --strip-components 1  --wildcards --no-anchored 'assets/*'"
   },
   "version": "0.0.5"
 }

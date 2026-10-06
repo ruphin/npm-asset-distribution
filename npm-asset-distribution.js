@@ -1,1 +1,1 @@
-const assetPath=window.modulesAssetPath&&window.modulesAssetPath('npm-asset-distribution')+'/'||'';export const imageLocation=`${assetPath}assets/fire.gif`;
+var e=`${window.modulesAssetPath&&window.modulesAssetPath(`npm-asset-distribution`)+`/`||``}assets/fire.gif`;export{e as imageLocation};
